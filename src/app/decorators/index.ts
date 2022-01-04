@@ -1,1 +1,2 @@
-export * from './store.decorator';
+export * from './stored-list.decorator';
+export * from './stored-selection.decorator';

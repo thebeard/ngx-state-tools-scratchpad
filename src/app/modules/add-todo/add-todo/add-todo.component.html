@@ -1,0 +1,22 @@
+<mat-card>
+  <h2>Add todo</h2>
+  <form #form="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>I must ...</mat-label>
+      <input matInput name="newTodo" [(ngModel)]="newTodo" required />
+    </mat-form-field>
+    <label class="mb">Type</label>
+    <mat-radio-group class="mb" name="type" [(ngModel)]="type" required>
+      <mat-radio-button value="card"> Card </mat-radio-button>
+      <mat-radio-button value="sticky"> Sticky </mat-radio-button>
+      <mat-radio-button value="notepad"> Notepad </mat-radio-button>
+    </mat-radio-group>
+    <label class="mb">Color</label>
+    <mat-radio-group class="mb" name="color" [(ngModel)]="color" required>
+      <mat-radio-button value="yellow"> Yellow </mat-radio-button>
+      <mat-radio-button value="blue"> Blue </mat-radio-button>
+      <mat-radio-button value="green"> Green </mat-radio-button>
+    </mat-radio-group>
+    <button mat-raised-button color="accent" [disabled]="form.invalid" (click)="addTodo()">Add</button>
+  </form>
+</mat-card>

@@ -1,0 +1,13 @@
+<h2>Todos</h2>
+
+<ul *ngFor="let todo of Todo.todos$ | async">
+  <li>
+    <mat-card [style.backgroundColor]="'light' + todo.color">
+      <strong>{{ todo.text }}</strong>
+      <dl>
+        <dt>Type</dt>
+        <dd>{{ todo.type }}</dd>
+      </dl>
+    </mat-card>
+  </li>
+</ul>

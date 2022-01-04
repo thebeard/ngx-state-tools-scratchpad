@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from './services/todo.service';
+import { TodoService } from './services';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: '<router-outlet></router-outlet>'
 })
 export class AppComponent implements OnInit {
-  title = 'StateManagement';
-
   constructor(private todoService: TodoService) {}
 
   ngOnInit() {
-    this.todoService.todo$.subscribe(console.log);
-    this.todoService.setTodo({
-      color: 'yellow',
-      text: 'Angular state management rules',
-      type: 'sticky',
-    });
+    this.todoService.addTodos([
+      {
+        color: 'yellow',
+        text: 'Angular state management rules',
+        type: 'sticky'
+      }
+    ]);
   }
 }

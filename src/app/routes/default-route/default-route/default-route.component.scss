@@ -1,0 +1,14 @@
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  > * {
+    display: block;
+    flex: 0 0 calc(50% - 30px);
+  }
+}
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
